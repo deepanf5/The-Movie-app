@@ -1,2 +1,8 @@
 @import "primeng/resources/themes/lara-dark-teal/theme.css";
 @import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+@import url(../node_modules/primeflex/primeflex.scss);
+
+*,::after,::before {
+    margin: 0;
+}
