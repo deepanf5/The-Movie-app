@@ -1,0 +1,30 @@
+
+<div class="px-4 py-5 md:px-6 lg:px-4">
+    <div class="grid">
+        <div class="col-12 md:col-6 lg:col-12">
+            <div class="surface-card shadow-2 border-round">
+                <div class="flex flex-wrap justify-content-between mb-3">
+                    <div>
+                        @if(movie.poster_path){
+                            <img
+                              [src]="imagesBaseUrl + '/w185/' + movie.poster_path"
+                              [alt]="movie.title"
+                            />
+                            }
+
+                            <div class="flex align-items-center justify-content-center">{{movie.title}}</div>
+                            <div class="flex justify-content-between flex-wrap mt-2">
+                                <div class="flex align-items-center justify-content-center">
+                                    <p class="text-xs p-2">{{ movie.release_date | date  }}</p>
+                                </div>
+                                <div class="flex align-items-center justify-content-center">
+                                    
+                            <p class="text-xs p-2">Rating: {{ movie.vote_average  }}</p>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+
