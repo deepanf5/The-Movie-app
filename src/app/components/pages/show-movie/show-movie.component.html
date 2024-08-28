@@ -1,1 +1,16 @@
-<p>show-movie works!</p>
+<section class="show-movie-details">
+<div class="grid grid-nogutter surface-section text-800">
+    <div class="col-12 md:col-6 lg:col-5 p-6 text-center md:text-left flex align-items-center ">
+        <section>
+            <span class="block text-6xl font-bold mb-4 text-primary">{{movieDetails.original_title}}</span>
+            <p class="mt-0 mb-4 text-600 line-height-3">{{movieDetails.overview}}</p>
+        </section>
+    </div>
+    <div class="text-center md:col-6 lg:col-7 overflow-hidden">
+        <img 
+        [src]="imagesBaseUrl + '/w185/' + movieDetails.poster_path"
+        [alt]="movieDetails.title"
+        class="w-15rem">
+    </div>
+</div>
+</section>
