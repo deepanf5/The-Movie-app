@@ -1,9 +1,9 @@
-<div class="overflow-hidden">
-    <div class="flex">
-        <div  class="flex flex-wrap align-items-center">
-            @for(movie of moviesResults; track movie.id){
+<div infiniteScroll (scrolled)="onScroll()" class="grid m-1">
+    @for(movie of moviesResults; track movie.id){
+    <div class="col-12 md:col-6 lg:col-2 hover-card">
+        <div class="text-center p-3">
                 <app-movie [movie]="movie"></app-movie>
-              }
         </div>
     </div>
+}
 </div>
