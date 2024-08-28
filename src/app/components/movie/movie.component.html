@@ -1,9 +1,9 @@
 <div class="m-1">
     @if(movie.poster_path){
         <img
-    
-          [src]="imagesBaseUrl + '/w185/' + movie.poster_path"
-          [alt]="movie.title"
+        [src]="imagesBaseUrl + '/w185/' + movie.poster_path"
+        [alt]="movie.title"
+        routerLink="/show-movie/{{movie.id}}"
         />
         }
     
