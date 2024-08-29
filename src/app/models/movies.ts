@@ -17,6 +17,7 @@ export interface Movie {
     runtime?: string;
     status?: string;
     genres?: any[];
+    production_companies?:any[]
   }
 
 

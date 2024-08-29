@@ -45,7 +45,7 @@ export class MoviesService {
       .pipe(map((data) => data.results))
   }
 
-  fetchMovieCast(id: string) {
+  fetchMovieCast(id: number) {
     return this.httpClient
       .get<Credits>(
         `${this.apiUrl}/movie/${id}/credits?api_key=${this.apiKey}`
