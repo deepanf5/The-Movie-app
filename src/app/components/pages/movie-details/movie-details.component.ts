@@ -1,18 +1,17 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Movie } from '../../../models/movies';
 import { ActivatedRoute } from '@angular/router';
 import { imagesBaseUrl, MoviesService } from '../../services/movies.service';
 import { CurrencyPipe, JsonPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-show-movie',
+  selector: 'app-movie-details',
   standalone: true,
   imports: [CurrencyPipe,JsonPipe],
-  templateUrl: './show-movie.component.html',
-  styleUrl: './show-movie.component.css'
+  templateUrl: './movie-details.component.html',
+  styleUrl: './movie-details.component.css'
 })
-export class ShowMovieComponent implements OnInit {
-  
+export class MovieDetailsComponent {
   private moiveServices = inject(MoviesService);
   movieDetails!:Movie;
   movieId!:number
@@ -34,4 +33,5 @@ export class ShowMovieComponent implements OnInit {
       
     })
   }
+
 }
