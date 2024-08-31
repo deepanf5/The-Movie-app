@@ -29,11 +29,10 @@ export class MovieCastComponent implements OnInit {
     this.activatedRouter.params.pipe(map((p)=> p['movieId'])).subscribe((id)=>{
       this.movie$ = this.moviesService.fetchMovieById(id); 
        this.moviesService.fetchMovieCast(id).subscribe((res)=> {
-        this.movieCast = res.slice(0,12)
+        this.movieCast = res.slice(0,12);
+        console.log(this.movieCast)
       });
       this.movieVideos$ = this.moviesService.fetchMovieVideos(id);
-      this.similarMovies$ = this.moviesService.fetchSimilarMovies(id);
-
     })
   }
 

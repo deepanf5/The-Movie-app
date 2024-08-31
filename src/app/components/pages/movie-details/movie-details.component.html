@@ -1,5 +1,5 @@
 <section class="show-movie-details">
-    <div class="grid grid-nogutter surface-section text-800">
+    <div class="grid grid-nogutter text-800">
         <div class="col-12 md:col-6 lg:col-5 p-6 text-center md:text-left flex align-items-center ">
             <section>
                 @if(movieDetails) {
@@ -12,21 +12,32 @@
                 </section>
 
                 }
-                <section class="movie-cast">
-                    <span class="block text-3xl font-bold mb-1 mt-5">Movie Cast Details</span>
-                    <hr>
-                    <app-movie-cast [movieCast]="movie"></app-movie-cast>
-                </section>
             </section>
         </div>
-        <div class="text-center mt-5 md:col-6 lg:col-7 overflow-hidden">
+        <div class="text-center mt-5  md:col-6 lg:col-7 overflow-hidden">
             @if (movieDetails) {
                 <img 
-                [src]="imagesBaseUrl + '/w185/' + movieDetails.poster_path"
+                [src]="imagesBaseUrl + '/original/' + movieDetails.poster_path"
                 [alt]="movieDetails.title"
-                class="w-15rem">
+                class="w-auto h-30rem">
             }
         </div>
     </div>
+    <div class="grid grid-nogutter  text-800">
+        <div class="col-12 md:col-12 lg:col-12 p-6 text-center md:text-left flex align-items-center ">
+            <section class="movie-cast ">
+                <span class="block text-3xl font-bold mb-5">Movie Cast Details</span>
+                <app-movie-cast [movieCast]="movie"></app-movie-cast>
+            </section>
+        </div>
+        <div class="col-12 md:col-12 lg:col-12 p-6 text-center md:text-left flex align-items-center ">
+            <section class="movie-cast">
+                <span class="block text-3xl font-bold mb-5">Similar Movies</span>
+                    <app-similar-movies></app-similar-movies>
+            </section>
+        </div>
+    </div>
 
-    </section>
+
+  
+     

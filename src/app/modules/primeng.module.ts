@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
 import { MenubarModule } from 'primeng/menubar';
 import { AvatarModule } from 'primeng/avatar';
+import { CarouselModule } from 'primeng/carousel';
 
 @NgModule({
     imports: [
@@ -14,7 +15,8 @@ import { AvatarModule } from 'primeng/avatar';
     exports:[
       ButtonModule,
       MenubarModule,
-      AvatarModule
+      AvatarModule,
+      CarouselModule
     ]
 })
 export class PrimeModule{}

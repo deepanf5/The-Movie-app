@@ -1,1 +1,37 @@
-<p>similar-movies works!</p>
+<section class="similar-movies">
+<p-carousel 
+[value]="similarMovies" 
+[numVisible]="5" 
+[numScroll]="5" 
+autoplayInterval="3000"
+[responsiveOptions]="responsiveOptions">
+    <ng-template let-movie pTemplate="item">
+        <div class="surface-border border-round m-2">
+            <div class="mb-3 text-center">
+                    @if (movie.poster_path) {
+                        <div>
+                            <img
+                            class="w-10"
+                            [src]="imagesBaseUrl + '/w185/' + movie.poster_path"
+                            [alt]="movie.title"
+                            routerLink="/movie-details/{{movie.id}}"
+                            />
+                            <p class="text-xs">{{movie.name}}</p>
+                        </div>
+                    }
+                    @else {
+                        <div class="flex align-items-center justify-content-center" style="height: 40vh;">
+                            <p class="text-center text-primary">poster not available 🙂‍↔️</p>
+                        </div>
+                    }
+    
+                </div>
+            </div>
+            <div class="mb-3 font-medium">
+                {{ movie.name }}
+            </div>
+    </ng-template>
+</p-carousel>
+</section>
+
+

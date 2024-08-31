@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { imagesBaseUrl, MoviesService } from '../../services/movies.service';
 import { CurrencyPipe, JsonPipe } from '@angular/common';
 import { MovieCastComponent } from '../movie-cast/movie-cast.component';
+import { SimilarMoviesComponent } from '../similar-movies/similar-movies.component';
 
 @Component({
   selector: 'app-movie-details',
@@ -11,7 +12,8 @@ import { MovieCastComponent } from '../movie-cast/movie-cast.component';
   imports: [
     CurrencyPipe,
     JsonPipe,
-    MovieCastComponent
+    MovieCastComponent,
+    SimilarMoviesComponent
   ],
   templateUrl: './movie-details.component.html',
   styleUrl: './movie-details.component.css'
