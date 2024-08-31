@@ -16,7 +16,7 @@ import { MovieComponent } from '../../movie/movie.component';
 })
 export class MoviesComponent {
 
-  private  moviesService  =  inject(MoviesService);
+private  moviesService  =  inject(MoviesService);
 private  pageNumber  =  1;
 private destroyRef  =  inject(DestroyRef)
 public  moviesObs$  =  this.moviesService.fetchMoviesByType('popular', this.pageNumber);

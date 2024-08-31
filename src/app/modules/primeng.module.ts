@@ -6,6 +6,9 @@ import { AvatarModule } from 'primeng/avatar';
 import { CarouselModule } from 'primeng/carousel';
 import { RatingModule } from 'primeng/rating';
 import { TableModule } from 'primeng/table';
+import { ChipModule } from 'primeng/chip';
+import { KnobModule } from 'primeng/knob';
+import { TagModule } from 'primeng/tag';
 
 @NgModule({
     imports: [
@@ -14,7 +17,10 @@ import { TableModule } from 'primeng/table';
       MenubarModule,
       AvatarModule,
       RatingModule,
-      TableModule
+      TableModule,
+      ChipModule,
+      KnobModule,
+      TagModule
 
     ],
     exports:[
@@ -23,7 +29,10 @@ import { TableModule } from 'primeng/table';
       AvatarModule,
       CarouselModule,
       RatingModule,
-      TableModule
+      TableModule,
+      ChipModule,
+      KnobModule,
+      TagModule
 
     ]
 })
