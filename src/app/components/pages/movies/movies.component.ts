@@ -1,7 +1,7 @@
 import { DatePipe } from '@angular/common';
 import { Component, DestroyRef, inject, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { imagesBaseUrl, MoviesService } from '../../../services/movies.service';
+import { MoviesService } from '../../../services/movies.service';
 import { Movie } from '../../../models/movies';
 import { InfiniteScrollModule } from "ngx-infinite-scroll";
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';

@@ -1,7 +1,7 @@
 <section class="show-movie-details">
-    <div class="grid grid-nogutter text-800">
-        <div class="col-12 md:col-6 lg:col-5 p-6 text-center md:text-left flex align-items-center ">
-            <section>
+    <div class="grid">
+        <div class="col-12 md:col-6 lg:col-6 p-5">
+            <div class="text-center lg:text-left p-3 border-round-sm">
                 @if(movieDetails) {
                     <span class="block text-4xl lg:text-6xl font-bold mb-4 text-primary">{{movieDetails.title}}</span>
                     <p class="mt-0 mb-4 text-600 line-height-3">{{movieDetails.overview}}</p>
@@ -28,17 +28,30 @@
 
                     
                 }
+            </div>
+        </div>
+        <div class="col-12 md:col-6 lg:col-6">
+            <div class="text-center  border-round-sm text-center mt-4">
+                @if (movieDetails) {
+                    <img 
+                    [src]="imagesBaseUrl + '/original/' + movieDetails.poster_path"
+                    [alt]="movieDetails.title"
+                    class="w-full lg:w-auto h-30rem">
+                }
+            </div>
+        </div>
+    </div>
+    
+    <!-- <div class="grid grid-nogutter text-800">
+        <div class="col-12 md:col-6 lg:col-5 p-6 text-center md:text-left flex align-items-center ">
+            <section>
+                
             </section>
         </div>
         <div class="col-12  mt-5 md:col-6 lg:col- overflow-hidden">
-            @if (movieDetails) {
-                <img 
-                [src]="imagesBaseUrl + '/original/' + movieDetails.poster_path"
-                [alt]="movieDetails.title"
-                class="w-full lg:w-auto h-30rem">
-            }
+            
         </div>
-    </div>
+    </div> -->
     <div class="grid grid-nogutter  text-800">
         <div class="col-12 md:col-12 lg:col-12 p-6 text-center md:text-left flex align-items-center ">
             <section class="movie-cast ">
