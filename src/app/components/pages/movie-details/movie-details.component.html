@@ -4,13 +4,29 @@
             <section>
                 @if(movieDetails) {
                     <span class="block text-6xl font-bold mb-4 text-primary">{{movieDetails.title}}</span>
-                <p class="mt-0 mb-4 text-600 line-height-3">{{movieDetails.overview}}</p>
-                <p>Rating :<i class="pi pi-thumbs-up mx-2"></i>{{movieDetails.vote_average}} | <i class="pi pi-clock mx-1"></i>Duration : {{movieDetails.runtime}}</p>
-                
-                <section class="cast-details mt-5">
-                    <p>Release_date : {{movieDetails.release_date}} | Revenue : {{movieDetails.revenue | currency:'USD':'symbol'}}</p>
-                </section>
+                    <p class="mt-0 mb-4 text-600 line-height-3">{{movieDetails.overview}}</p>
+                    <p>Rating :<i class="pi pi-thumbs-up mx-2"></i>{{movieDetails.vote_average}} | <i class="pi pi-clock mx-1"></i>Duration : {{movieDetails.runtime}}</p>
+                    
+                    <section class="cast-details mt-5">
+                        <p>Release_date : {{movieDetails.release_date}} | Revenue : {{movieDetails.revenue | currency:'USD':'symbol'}}</p>
+                        <div class="mt-5">
+                            <span class="mr-2">Overall</span>
+                            <p-rating  [(ngModel)]="Rating" [readonly]="true" [cancel]="false" [stars]="10" />
+                        </div>
 
+                        <section class="production-company-details">
+                            <p class="mt-5 text-primary">Production Companies</p>
+                            <div class="grid mt-2">
+                                @for (company of movieDetails.production_companies; track $index) {
+                                    <div class="col-12 md:col-6 p-2 lg:col-5">
+                                        <span class="text-xs">{{company.name}}</span>
+                                    </div>
+                                }
+                            </div>
+                        </section>
+                    </section>
+
+                    
                 }
             </section>
         </div>
@@ -33,7 +49,7 @@
         <div class="col-12 md:col-12 lg:col-12 p-6 text-center md:text-left flex align-items-center ">
             <section class="movie-cast">
                 <span class="block text-3xl font-bold mb-5">Similar Movies</span>
-                    <app-similar-movies></app-similar-movies>
+                    <app-similar-movies (emitMoiveId)="handleEvent($event)"></app-similar-movies>
             </section>
         </div>
     </div>

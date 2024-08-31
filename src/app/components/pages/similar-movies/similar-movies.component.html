@@ -3,7 +3,6 @@
 [value]="similarMovies" 
 [numVisible]="5" 
 [numScroll]="5" 
-autoplayInterval="3000"
 [responsiveOptions]="responsiveOptions">
     <ng-template let-movie pTemplate="item">
         <div class="surface-border border-round m-2">
@@ -15,6 +14,7 @@ autoplayInterval="3000"
                             [src]="imagesBaseUrl + '/w185/' + movie.poster_path"
                             [alt]="movie.title"
                             routerLink="/movie-details/{{movie.id}}"
+                            (click)="EmitMoiveId(movie.id)"
                             />
                             <p class="text-xs">{{movie.name}}</p>
                         </div>

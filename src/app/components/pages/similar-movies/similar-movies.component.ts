@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, EventEmitter, inject, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Movie } from '../../../models/movies';
 import { PrimeModule } from '../../../modules/primeng.module';
@@ -20,6 +20,8 @@ export class SimilarMoviesComponent implements OnInit {
   private moviesService = inject(MoviesService);
   private activatedRouter = inject(ActivatedRoute);
   public imagesBaseUrl = imagesBaseUrl;
+  movieId:any
+  @Output() emitMoiveId = new EventEmitter<string>();
 
   ngOnInit(): void {
 
@@ -40,13 +42,19 @@ export class SimilarMoviesComponent implements OnInit {
           numScroll: 4
       }
   ];
-  this.activatedRouter.params.pipe(map((p)=> p['movieId'])).subscribe((id)=>{
-    this.moviesService.fetchSimilarMovies(id).subscribe((res) => {
+  this.activatedRouter.params.pipe(map((p)=> {
+   this.movieId =  p['movieId']
+  } )).subscribe((id)=>{
+    this.moviesService.fetchSimilarMovies(this.movieId).subscribe((res) => {
       this.similarMovies = res;
       console.log(this.similarMovies)
     })
     
   })
+  }
+
+  EmitMoiveId(movieId:any) {
+    this.emitMoiveId.emit(movieId)
   }
 
 }
