@@ -1,0 +1,21 @@
+<div class="m-1">
+    @if(movie.poster_path){
+        <img
+        class="w-full lg:w-13rem"
+        [src]="imagesBaseUrl + '/original/' + movie.poster_path"
+        [alt]="movie.title"
+        routerLink="/movie-details/{{movie.id}}"
+        />
+        }
+    
+        <div class="text-xs mt-1 text-left">{{movie.title}}</div>
+        <div class="grid mt-1  text-left">
+            <div class="col-6">
+                <div class="text-xs text-primary">Rating: {{ movie.vote_average }}</div>
+            </div>
+            <div class="col-6 text-center">
+                <div class="text-xs">{{ movie.release_date | date  }}</div>
+            </div>
+        </div>
+       
+</div>

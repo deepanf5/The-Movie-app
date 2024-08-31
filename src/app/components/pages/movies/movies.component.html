@@ -1,0 +1,9 @@
+<div infiniteScroll (scrolled)="onScroll()" class="grid m-1">
+    @for(movie of moviesResults; track movie.id){
+    <div class="col-12 md:col-6 lg:col-2 hover-card">
+        <div class="text-center">
+                <app-movie [movie]="movie"></app-movie>
+        </div>
+    </div>
+}
+</div>
