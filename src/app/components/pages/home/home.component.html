@@ -17,16 +17,16 @@
             <ul class="list-none p-0 mt-5">
                 <div class="font-medium text-3xl text-900 mb-3">{{movie.title}}</div>
                 <li class="flex align-items-center py-3 px-2 border-top-1 surface-border flex-wrap">
-                    <div class="w-6 md:w-2 flex">
+                    <div class="w-full lg:w-6 md:w-2 flex text-center lg:text-left">
                         <img
-                        class="w-5rem"
+                        class="w-full lg:w-5rem"
                         [src]="imagesBaseUrl + '/original/' + movie.poster_path"
                         [alt]="movie.title"
                         routerLink="/movie-details/{{movie.id}}"
                         />
                     </div>
-                    <div class="text-500 w-6 md:w-2 font-medium">Reating</div>
-                    <div class="text-900 w-full mt-2 md:w-8 md:flex-order-0 flex-order-1 justify-content-end">
+                    <div class="text-500 w-full mt-2 lg:w-3 md:w-2 font-medium">Rating</div>
+                    <div class="text-900 w-full mt-2 md:w-8 lg:w-3 md:flex-order-0 flex-order-1 justify-content-end">
                         <p-rating  [(ngModel)]="movie.vote_average" [readonly]="true" [cancel]="false" [stars]="10" />
                     </div>
                 </li>
@@ -35,10 +35,10 @@
                         Release_date
                     </div>
                     <div class="text-900 w-full md:w-8 md:flex-order-0 flex-order-1">
-                        <div class="text-900 w-full md:w-8 md:flex-order-0 flex-order-1 justify-content-end">{{movie.release_date}}</div>
+                        <div class="text-900 w-full md:w-8 md:flex-order-0 flex-order-1 justify-content-end text-xs">{{movie.release_date}}</div>
                     </div>
                     <div class="w-6 md:w-2 flex justify-content-end">
-                        <div class="mx-3 text-sm">Language</div>
+                        <div class="mx-3 text-sm mt-1">Language</div>
                         <p-tag value="{{movie.original_language}}"/>
 
                     </div>
