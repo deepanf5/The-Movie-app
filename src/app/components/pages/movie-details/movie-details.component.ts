@@ -38,7 +38,6 @@ export class MovieDetailsComponent  implements OnInit{
     })
     this.moiveServices.fetchMovieById(this.movieId).subscribe((res:Movie)=> {
       this.movieDetails = res
-      console.log(this.movieDetails)
       this.Rating = this.movieDetails.vote_average.toFixed();
     })
   }
