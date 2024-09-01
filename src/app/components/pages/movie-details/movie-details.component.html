@@ -37,7 +37,17 @@
                     [src]="imagesBaseUrl + '/original/' + movieDetails.poster_path"
                     [alt]="movieDetails.title"
                     class="w-full lg:w-auto h-30rem">
+                    <div class="mt-2">
+                        <button pButton pRipple label="Watch Now" class="p-3 w-full lg:w-20rem mt-auto watch border-0"></button>
+                    </div>
                 }
+                @else {
+                    <div class="flex align-items-center justify-content-center" style="height: 40vh;">
+                        <p class="text-center text-primary">poster not available 🙂‍↔️</p>
+                    </div>
+                }
+
+
             </div>
         </div>
     </div>

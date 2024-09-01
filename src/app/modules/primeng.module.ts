@@ -21,7 +21,7 @@ import { TagModule } from 'primeng/tag';
       TableModule,
       ChipModule,
       KnobModule,
-      TagModule,
+      TagModule
 
     ],
     exports:[
@@ -33,7 +33,7 @@ import { TagModule } from 'primeng/tag';
       TableModule,
       ChipModule,
       KnobModule,
-      TagModule,
+      TagModule
 
     ]
 })

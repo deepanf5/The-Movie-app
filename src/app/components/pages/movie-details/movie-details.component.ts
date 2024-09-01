@@ -28,7 +28,8 @@ export class MovieDetailsComponent  implements OnInit{
   movieId!:number
   imagesBaseUrl = imagesBaseUrl;
   movie:any;
-  Rating!:any
+  Rating!:any;
+  blockedPanel: boolean = true;
 
   constructor(private route:ActivatedRoute){}
 
