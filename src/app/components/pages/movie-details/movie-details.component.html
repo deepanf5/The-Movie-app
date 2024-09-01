@@ -1,4 +1,4 @@
-<section class="show-movie-details">
+<section class="show-movie-details m-2">
     <div class="grid">
         <div class="col-12 md:col-6 lg:col-6 p-5">
             <div class="text-center lg:text-left p-3 border-round-sm">
@@ -42,31 +42,19 @@
         </div>
     </div>
     
-    <!-- <div class="grid grid-nogutter text-800">
-        <div class="col-12 md:col-6 lg:col-5 p-6 text-center md:text-left flex align-items-center ">
-            <section>
-                
-            </section>
-        </div>
-        <div class="col-12  mt-5 md:col-6 lg:col- overflow-hidden">
-            
-        </div>
-    </div> -->
-    <div class="grid grid-nogutter  text-800">
+    <div class="grid">
         <div class="col-12 md:col-12 lg:col-12 p-6 text-center md:text-left flex align-items-center ">
             <section class="movie-cast ">
                 <span class="block text-3xl font-bold mb-5 text-primary">Movie Cast</span>
                 <app-movie-cast [movieCast]="movie"></app-movie-cast>
             </section>
         </div>
-        <div class="col-12 md:col-12 lg:col-12  text-center md:text-left flex align-items-center ">
+        <div class="col-12 md:col-12 lg:col-12 p-6 text-center md:text-left flex align-items-center">
             <section class="movie-cast">
-                <span class="block text-3xl font-bold mb-2 p-6 text-primary">Similar Movies</span>
+                <span class="block text-3xl font-bold mb-2  m-1 text-primary">Similar Movies</span>
                     <app-similar-movies (emitMoiveId)="handleEvent($event)"></app-similar-movies>
             </section>
         </div>
     </div>
 
-
-  
-     
+</section>
