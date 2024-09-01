@@ -9,6 +9,7 @@ import { TableModule } from 'primeng/table';
 import { ChipModule } from 'primeng/chip';
 import { KnobModule } from 'primeng/knob';
 import { TagModule } from 'primeng/tag';
+import { MessagesModule } from 'primeng/messages';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { TagModule } from 'primeng/tag';
       ChipModule,
       KnobModule,
       TagModule,
+      MessagesModule
 
     ],
     exports:[
@@ -34,6 +36,7 @@ import { TagModule } from 'primeng/tag';
       ChipModule,
       KnobModule,
       TagModule,
+      MessagesModule
 
     ]
 })
