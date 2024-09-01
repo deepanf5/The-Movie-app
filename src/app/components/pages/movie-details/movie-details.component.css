@@ -1,3 +1,8 @@
 .watch {
     background-color:#f9ca24;
 }
+
+::ng-deep .p-message-wrapper {
+    justify-content: space-between;
+
+}

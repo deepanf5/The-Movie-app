@@ -47,7 +47,6 @@ export class SimilarMoviesComponent implements OnInit {
   } )).subscribe((id)=>{
     this.moviesService.fetchSimilarMovies(this.movieId).subscribe((res) => {
       this.similarMovies = res;
-      console.log(this.similarMovies)
     })
     
   })

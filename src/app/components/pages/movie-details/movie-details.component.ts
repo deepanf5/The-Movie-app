@@ -7,6 +7,7 @@ import { MovieCastComponent } from '../movie-cast/movie-cast.component';
 import { SimilarMoviesComponent } from '../similar-movies/similar-movies.component';
 import { PrimeModule } from '../../../modules/primeng.module';
 import { FormsModule } from '@angular/forms';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-movie-details',
@@ -17,8 +18,10 @@ import { FormsModule } from '@angular/forms';
     MovieCastComponent,
     SimilarMoviesComponent,
     PrimeModule,
+    FormsModule,
     FormsModule
   ],
+  providers:[MessageService],
   templateUrl: './movie-details.component.html',
   styleUrl: './movie-details.component.css'
 })
@@ -31,7 +34,7 @@ export class MovieDetailsComponent  implements OnInit{
   Rating!:any;
   blockedPanel: boolean = true;
 
-  constructor(private route:ActivatedRoute){}
+  constructor(private route:ActivatedRoute,private messageService: MessageService){}
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -49,6 +52,10 @@ export class MovieDetailsComponent  implements OnInit{
       this.Rating = this.movieDetails.vote_average.toFixed();
     })
 
+  }
+
+  watch() {
+    this.messageService.add({severity:'warn ' , summary: 'Watching Movies features Are on Their Way—Stay Tuned!'});
   }
 
 }
