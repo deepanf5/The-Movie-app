@@ -1,5 +1,5 @@
-import { Component, inject, Input, OnInit } from '@angular/core';
-import { imagesBaseUrl, MoviesService } from '../../services/movies.service';
+import { Component, Input, OnInit } from '@angular/core';
+import { imagesBaseUrl } from '../../services/movies.service';
 import { Movie } from '../../models/movies';
 import { DatePipe } from '@angular/common';
 import { RouterModule } from '@angular/router';

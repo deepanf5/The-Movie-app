@@ -6,11 +6,18 @@ import { Movie } from '../../../models/movies';
 import { InfiniteScrollModule } from "ngx-infinite-scroll";
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { MovieComponent } from '../../movie/movie.component';
+import { PrimeModule } from '../../../modules/primeng.module';
 
 @Component({
   selector: 'app-movies',
   standalone: true,
-  imports: [DatePipe,RouterModule,InfiniteScrollModule,MovieComponent],
+  imports: [
+    DatePipe,
+    RouterModule,
+    InfiniteScrollModule,
+    MovieComponent,
+    PrimeModule
+  ],
   templateUrl: './movies.component.html',
   styleUrl: './movies.component.css'
 })
